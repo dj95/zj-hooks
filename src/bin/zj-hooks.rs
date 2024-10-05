@@ -1,5 +1,4 @@
 use miette::Error;
-use plugin_api::plugin_command::ProtobufPermissionType;
 use std::collections::BTreeMap;
 
 use zellij_tile::prelude::*;
