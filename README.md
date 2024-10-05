@@ -30,6 +30,8 @@ plugin location="file:path/to/zj-hooks.wasm" {
 }
 ```
 
+When the plugin is configured correctly, it will hide itself. Otherwise it will display configuration error messages.
+
 ### Supported Events
 
 | Event Type | Supported placeholders |

@@ -24,7 +24,7 @@ impl Config {
         Ok(Self { hooks })
     }
 
-    pub fn process_hooks(&self, event: Event) {
+    pub fn process_hooks(&self, event: &Event) {
         tracing::debug!("registered hook count: {}", self.hooks.len());
         for hook in &self.hooks {
             hook.run_if_needed(&event);
