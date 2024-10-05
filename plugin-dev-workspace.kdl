@@ -1,0 +1,21 @@
+layout {
+    default_tab_template {
+        children
+        pane size=1 borderless=true {
+            plugin location="zjstatus"
+        }
+    }
+
+    tab {
+        pane {
+            plugin location="file:target/wasm32-wasip1/debug/zj-hooks.wasm" {
+                hook_test_event     "session"
+                hook_test_command   "bash -c 'echo {{session_name}} >> test.log'"
+
+                hook_mode_event     "mode"
+                hook_mode_command   "bash -c 'echo {{mode}} >> test.log'"
+            }
+        }
+        pane
+    }
+}
