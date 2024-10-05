@@ -18,3 +18,12 @@ test:
 lint:
   cargo clippy --all-features --lib
   cargo audit
+
+# Create and push a new release version.
+release version:
+  cargo set-version {{version}}
+  direnv exec . cargo build --release
+  git commit -am "chore: bump version to v{{version}}"
+  git tag -m "v{{version}}" v{{version}}
+  git push origin main
+  git push origin "v{{version}}"
